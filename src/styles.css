@@ -1,8 +1,21 @@
+*,
+html,
 body {
-  background-color: cadetblue;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-p {
-  background-color: aquamarine;
-  color: blue;
+body {
+  background-color: tan
+}
+
+nav {
+  background-color: cadetblue;
+  display: flex;
+  padding: 1rem;
+  flex-direction: row-reverse;
+}
+
+nav ul {
+  display: none;
 }
