@@ -1,21 +1,193 @@
-*,
-html,
-body {
-  margin: 0;
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
+* {
+  margin: 0;
+}
+
+html,
 body {
-  background-color: tan
+  height: 100%;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  line-height: 1.5; /* This requires customizing the line height for larger text. */
+  font-size: 1.5rem;
+  padding: 3rem;
+  background-color: teal;
+  background-image: url(./pyramid.bmp);
+  background-repeat: repeat;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%; /* Use `max-width: revert;` if an image is meant to overflow */
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+.page {
+  background-color: silver;
+  height: min(700px, 100%);
+  width: min(800px, 100%);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 6px double black;
+  overflow: hidden;
+  box-shadow: 3px 3px black;
+}
+
+header {
+  background-color: white;
+  border-bottom: 2px solid black;
+  display: flex;
+  height: max-content;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+}
+
+.logo {
+  background-color: navy;
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 2px solid black;
+  font-size: 0.7em;
+  flex-grow: 2;
+}
+
+.js-dropdown {
+  height: 100%;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  position: relative;
+  cursor: pointer;
+  background-color: silver;
+}
+
+.js-dropdown .dropdown-button {
+  height: 100%;
+  border: 4px outset silver;
+}
+
+.js-dropdown .dropdown-button:hover {
+  border: 4px inset silver;
 }
 
 nav {
-  background-color: cadetblue;
   display: flex;
-  padding: 1rem;
-  flex-direction: row-reverse;
+  background-color: silver;
 }
 
-nav ul {
+.dropdown-button {
+  padding: 0.5rem;
+  background-color: silver;
+  font-weight: bold;
+}
+
+.dropdown-content > div {
+  padding: 0.5rem;
+}
+
+.dropdown-button::first-letter,
+.dropdown-content > div::first-letter {
+  text-decoration: underline;
+}
+
+.css-dropdown {
+  /* display: inline-block;  Don't need this because its container is flex?*/
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-content {
   display: none;
+  position: absolute;
+  width: 100%;
+  height: min-content;
+  z-index: 2;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.css-dropdown:first-child .dropdown-content {
+  border-left: none;
+}
+
+.dropdown-button:hover,
+.css-dropdown:hover .dropdown-button,
+.dropdown-button:focus,
+.css-dropdown:focus .dropdown-button {
+  background-color: #00000033;
+}
+
+
+.dropdown-content > div:hover,
+.dropdown-content > div:focus {
+  background-color: navy;
+  color: white;
+}
+
+.css-dropdown:hover > .dropdown-content,
+.css-dropdown:focus > .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  background-color: white;
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+.computer-icon {
+  width: 100px;
+  height: 130px;
+  grid-template-rows: 120px max-content;
+  cursor: pointer;
+  margin: 1rem;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.computer-icon img {
+  object-fit: cover;
+  position: absolute;
+  top: -20px;
+  left: -2px;
+  z-index: 1;
+}
+
+.computer-icon p {
+  width: max-content;
+  justify-self: center;
+  padding: 0.3rem 1rem;
+  position: absolute;
+  bottom: 0;
+}
+
+.computer-icon:hover p,
+.computer-icon:focus p{
+  color: white;
+}
+
+.computer-icon:hover,
+.computer-icon:focus   {
+  background-color: navy;
+}
+
+footer {
+  background-color: silver;
+  border-top: 2px solid black;
+  padding: 0.5rem;
 }
