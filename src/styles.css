@@ -16,7 +16,7 @@ body {
 body {
   line-height: 1.5; /* This requires customizing the line height for larger text. */
   font-size: 1.5rem;
-  padding: 3rem;
+  padding: min(3rem, 5%);
   background-color: teal;
   background-image: url(./pyramid.bmp);
   background-repeat: repeat;
@@ -40,11 +40,11 @@ input, button, textarea, select {
   flex-direction: column;
   border: 6px double black;
   overflow: hidden;
-  box-shadow: 3px 3px black;
+  box-shadow: 6px 6px black;
 }
 
 header {
-  background-color: white;
+  background-color: navy;
   border-bottom: 2px solid black;
   display: flex;
   height: max-content;
@@ -62,12 +62,13 @@ header {
   padding: 0.5rem;
   text-align: center;
   border-bottom: 2px solid black;
-  font-size: 0.7em;
+  font-size: 0.6em;
   flex-grow: 2;
 }
 
 .js-dropdown {
-  height: 100%;
+  height: 56px;
+  width: 56px;
   border-left: 2px solid black;
   border-bottom: 2px solid black;
   position: relative;
@@ -113,7 +114,7 @@ nav {
 .dropdown-content {
   display: none;
   position: absolute;
-  width: 100%;
+  width: max-content;
   height: min-content;
   z-index: 2;
   background-color: white;
@@ -151,7 +152,7 @@ nav {
 }
 
 .computer-icon {
-  width: 100px;
+  width: 130px;
   height: 130px;
   grid-template-rows: 120px max-content;
   cursor: pointer;
@@ -163,25 +164,24 @@ nav {
 .computer-icon img {
   object-fit: cover;
   position: absolute;
-  top: -20px;
-  left: -2px;
+  top: -25px;
+  left: 0;
   z-index: 1;
 }
 
 .computer-icon p {
-  width: max-content;
-  justify-self: center;
+  width: 100%;
+  text-align: center;
   padding: 0.3rem 1rem;
   position: absolute;
-  bottom: 0;
+  left: 0;
+  bottom: 5px;
 }
 
-.computer-icon:hover p,
 .computer-icon:focus p{
   color: white;
 }
 
-.computer-icon:hover,
 .computer-icon:focus   {
   background-color: navy;
 }
