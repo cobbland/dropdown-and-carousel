@@ -81,6 +81,7 @@ header {
 .js-close .close-button {
   border: 4px outset silver;
   flex-grow: 1;
+  flex-shrink: 0;
   text-align: center;
   height: 100%;
   padding: 0.5rem 0;
