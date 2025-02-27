@@ -34,18 +34,30 @@
 
 const dropdownDiv = document.querySelector(".js-dropdown-div");
 const dropdownMenu = document.querySelector(".js-dropdown");
+const page1 = document.querySelector('.page1');
+const page2 = document.querySelector('.page2');
+let closeButtons = document.querySelectorAll('.close-button');
 
-dropdownDiv.addEventListener('click', () => {
-   dropdownMenu.classList.toggle("show");
+closeButtons = Array.from(closeButtons);
+console.log(closeButtons);
+
+dropdownDiv.addEventListener('click', (button) => {
+  button.stopPropagation();
+  dropdownMenu.classList.toggle("show");
+  if (button.target.innerText === 'Carousel') {
+    page1.classList.toggle('behind');
+    page2.classList.toggle('show');
+  }
 })
 
-// document.addEventListener("click", (clicked) => {
-//    console.log(clicked.target)
-//    if (clicked.target !== dropdownDiv) {
-//       if (dropdownMenu.classList.value === "js-dropdown show") {
-//          dropdownMenu.classList.toggle("show");
-//       }
-//    } else if (clicked.target.closest('.js-dropdown-div')) {
-//       dropdownMenu.classList.toggle("show");
-//    }
-// }) // doesn't work //
+document.documentElement.addEventListener("click", (clicked) => {
+  if (dropdownMenu.classList.contains('show')) {
+    dropdownMenu.classList.toggle("show");
+  }
+  for (const closeButton in closeButtons) {
+    if (clicked.target === closeButtons[closeButton]) {
+      clicked.target.closest('.page').classList.toggle('show');
+      page1.classList.toggle('behind');
+    }
+  }
+})

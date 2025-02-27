@@ -20,6 +20,7 @@ body {
   background-color: teal;
   background-image: url(./pyramid.bmp);
   background-repeat: repeat;
+  position: relative;
 }
 
 img, picture, video, canvas, svg {
@@ -41,6 +42,20 @@ input, button, textarea, select {
   border: 6px double black;
   overflow: hidden;
   box-shadow: 6px 6px black;
+  position: absolute;
+}
+
+.page.close {
+  display: none;
+}
+
+.page.behind {
+  pointer-events: none;
+  box-shadow: none;
+}
+
+.page2 {
+  display: none;
 }
 
 header {
@@ -52,12 +67,20 @@ header {
   flex-direction: column;
 }
 
+.page.behind header {
+  background-color: silver;
+  pointer-events: none;
+}
+
+.page.behind header .logo {
+  color: grey;
+}
+
 .top-bar {
   display: flex;
 }
 
 .logo {
-  background-color: navy;
   color: white;
   padding: 0.5rem;
   text-align: center;
@@ -133,21 +156,17 @@ nav {
 }
 
 .dropdown-button:hover,
-.css-dropdown:hover .dropdown-button,
-.dropdown-button:focus,
-.css-dropdown:focus .dropdown-button {
+.css-dropdown:hover .dropdown-button {
   background-color: #00000033;
 }
 
 
-.dropdown-content > div:hover,
-.dropdown-content > div:focus {
+.dropdown-content > div:hover {
   background-color: navy;
   color: white;
 }
 
-.css-dropdown:hover > .dropdown-content,
-.css-dropdown:focus > .dropdown-content {
+.css-dropdown:hover > .dropdown-content {
   display: flex;
   flex-direction: column;
 }
@@ -210,6 +229,7 @@ nav {
   border: 2px solid black;
   cursor: pointer;
   display: none;
+  position: absolute;
 }
 
 .js-dropdown div {
@@ -225,6 +245,19 @@ nav {
 
 .show {
   display: block;
+  top: 80px;
+  left: 80px;
+}
+
+.page2.show {
+  display: flex;
+  top: 250px;
+  left: 100px;
+}
+
+
+.lorem {
+  margin: 0.5rem 2.5rem;
 }
 
 footer {
