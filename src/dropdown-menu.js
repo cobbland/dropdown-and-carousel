@@ -39,7 +39,6 @@ const page2 = document.querySelector('.page2');
 let closeButtons = document.querySelectorAll('.close-button');
 
 closeButtons = Array.from(closeButtons);
-console.log(closeButtons);
 
 dropdownDiv.addEventListener('click', (button) => {
   button.stopPropagation();
