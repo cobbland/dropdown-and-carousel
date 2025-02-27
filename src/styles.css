@@ -66,22 +66,28 @@ header {
   flex-grow: 2;
 }
 
-.js-dropdown {
+.js-close {
   height: 56px;
   width: 56px;
   border-left: 2px solid black;
   border-bottom: 2px solid black;
-  position: relative;
   cursor: pointer;
   background-color: silver;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.js-dropdown .dropdown-button {
-  height: 100%;
+.js-close .close-button {
   border: 4px outset silver;
+  flex-grow: 1;
+  text-align: center;
+  height: 100%;
+  padding: 0.5rem 0;
+  /* box-sizing: border-box; */
 }
 
-.js-dropdown .dropdown-button:hover {
+.js-close .close-button:hover {
   border: 4px inset silver;
 }
 
@@ -151,6 +157,14 @@ nav {
   overflow-y: scroll;
 }
 
+.js-dropdown-div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+}
+
 .computer-icon {
   width: 130px;
   height: 130px;
@@ -159,6 +173,7 @@ nav {
   margin: 1rem;
   padding: 0.5rem;
   position: relative;
+  display: inline-block;
 }
 
 .computer-icon img {
@@ -184,6 +199,31 @@ nav {
 
 .computer-icon:focus   {
   background-color: navy;
+}
+
+.js-dropdown {
+  width: max-content;
+  height: min-content;
+  z-index: 2;
+  background-color: white;
+  border: 2px solid black;
+  cursor: pointer;
+  display: none;
+}
+
+.js-dropdown div {
+  padding: 0.5rem;
+  display: block;
+}
+
+.js-dropdown > div:hover,
+.js-dropdown > div:focus {
+  background-color: navy;
+  color: white;
+}
+
+.show {
+  display: block;
 }
 
 footer {

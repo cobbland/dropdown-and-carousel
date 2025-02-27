@@ -31,3 +31,21 @@
 
 //     }
 // }
+
+const dropdownDiv = document.querySelector(".js-dropdown-div");
+const dropdownMenu = document.querySelector(".js-dropdown");
+
+dropdownDiv.addEventListener('click', () => {
+   dropdownMenu.classList.toggle("show");
+})
+
+document.addEventListener("click", (clicked) => {
+   console.log(clicked.target)
+   if (clicked.target !== dropdownDiv) {
+      if (dropdownMenu.classList.value === "js-dropdown show") {
+         dropdownMenu.classList.toggle("show");
+      }
+   } else if (clicked.target.closest('.js-dropdown-div')) {
+      dropdownMenu.classList.toggle("show");
+   }
+}) // doesn't work //
